@@ -1,0 +1,14 @@
+import React from 'react';
+import {View} from 'react-native';
+import {Screen,Button,Card,Chip,Field,Header,I,Section,Txt} from '@/components/ui';
+import {FeatureArt} from '@/components/illustrations';
+import {DentalMark,LuxeToothScene} from '@/components/premium-art';
+import {C,radius,space,typography} from '@/theme';
+export default function DesignSystem(){return <Screen><Header title="Tasarım Sistemi"/><View style={{flexDirection:'row',alignItems:'center',gap:9}}><DentalMark size={46}/><View><Txt size="title">Premium Stüdyo</Txt><Txt size="caption" muted>Sürüm 3.0 · Cam etkisi ve zarif ışıklar</Txt></View></View>
+<Section title="Marka renkleri"><View style={{flexDirection:'row',flexWrap:'wrap',gap:10}}>{Object.entries({Ink:C.ink,Blue:C.blue,Teal:C.teal,Aqua:C.aqua,Sky:C.sky,Powder:C.powder,Canvas:C.canvas,White:C.white}).map(([name,color])=><View key={name} style={{width:'22%',gap:5}}><View style={{height:56,borderRadius:17,backgroundColor:color,borderWidth:1,borderColor:C.border}}/><Txt size="mini">{name}</Txt><Txt size="mini" muted>{color}</Txt></View>)}</View></Section>
+<Section title="Tipografi · Inter"><Card style={{gap:12}}><Txt size="display">Başlık XL / 35</Txt><Txt size="title">Sayfa başlığı / 27</Txt><Txt size="heading">Bölüm / 21</Txt><Txt size="subheading">Kart başlığı / 16</Txt><Txt>Gövde / 14 · Özenle hazırlanmış detaylar.</Txt><Txt size="caption" muted>Açıklama / 12 · Yardımcı bilgiler</Txt></Card></Section>
+<Section title="Butonlar ve etkileşim durumları"><View style={{gap:12}}><Button title="Sonraki randevun" icon="arrow-forward" onPress={()=>{}}/><Button title="İkincil İşlem" kind="secondary" onPress={()=>{}}/><Button title="Devre Dışı" disabled onPress={()=>{}}/></View></Section>
+<Section title="Giriş alanları ve seçimler"><Field icon="search-outline" placeholder="Uzman ara..."/><View style={{flexDirection:'row',gap:8,marginTop:13,flexWrap:'wrap'}}><Chip label="Seçili" active/><Chip label="Genel"/><Chip label="Estetik"/><Chip label="Ortodonti"/></View></Section>
+<Section title="Cam efekti kartlar"><Card><View style={{flexDirection:'row',gap:12,alignItems:'center'}}><FeatureArt icon="medkit-outline"/><View style={{flex:1}}><Txt weight="800">Özel cam efektli kart</Txt><Txt size="caption" muted>25dp köşe · İnce kenarlık · Yumuşak gölge</Txt></View></View></Card></Section>
+<Section title="Özel dental illüstrasyon"><Card style={{alignItems:'center'}}><LuxeToothScene size={250} shield/><Txt size="mini" muted>Özgün vektör görsel · Kalite kaybı olmadan ölçeklenir</Txt></Card></Section>
+<Section title="Boşluklar ve şekiller"><Card><Txt>Boşluklar: 4, 8, 12, 16, 20, 24, 32</Txt><Txt style={{marginTop:6}}>Kart: {radius.card} · Girişler: {radius.input} · Yuvarlak: {radius.pill}</Txt><Txt size="caption" muted style={{marginTop:10}}>Tek referans kaynağı: src/theme/index.ts</Txt></Card></Section></Screen>}

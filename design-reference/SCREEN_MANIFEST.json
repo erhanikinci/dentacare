@@ -1,0 +1,125 @@
+{
+  "project": "DentaCare",
+  "version": "3.0.0",
+  "framework": "Expo SDK 57, React Native 0.86, TypeScript",
+  "demo": true,
+  "design_screens": [
+    {
+      "number": 1,
+      "title": "Açılış",
+      "route": "/splash"
+    },
+    {
+      "number": 2,
+      "title": "Hoş Geldin",
+      "route": "/(auth)/welcome"
+    },
+    {
+      "number": 3,
+      "title": "Giriş Yap / Hesap Oluştur",
+      "route": "/(auth)/sign-in"
+    },
+    {
+      "number": 4,
+      "title": "Başlangıç / Kişiselleştirme",
+      "route": "/(auth)/onboarding"
+    },
+    {
+      "number": 5,
+      "title": "Ana Sayfa",
+      "route": "/(tabs)/home"
+    },
+    {
+      "number": 6,
+      "title": "Diş Hekimi Bul",
+      "route": "/dentists"
+    },
+    {
+      "number": 7,
+      "title": "Hekim Profili",
+      "route": "/dentists/[id]"
+    },
+    {
+      "number": 8,
+      "title": "Tedaviler",
+      "route": "/treatments"
+    },
+    {
+      "number": 9,
+      "title": "Tedavi Detayı",
+      "route": "/treatments/[id]"
+    },
+    {
+      "number": 10,
+      "title": "Randevu Al",
+      "route": "/booking"
+    },
+    {
+      "number": 11,
+      "title": "Randevu Onayı",
+      "route": "/booking-confirmed"
+    },
+    {
+      "number": 12,
+      "title": "Randevularım",
+      "route": "/(tabs)/appointments"
+    },
+    {
+      "number": 13,
+      "title": "Görüntülü Görüşme",
+      "route": "/video-consult"
+    },
+    {
+      "number": 14,
+      "title": "Mesajlar",
+      "route": "/(tabs)/messages"
+    },
+    {
+      "number": 15,
+      "title": "Diş Sağlığı Kayıtları",
+      "route": "/(tabs)/records"
+    },
+    {
+      "number": 16,
+      "title": "Ağız Sağlığı Takibi",
+      "route": "/tracker"
+    },
+    {
+      "number": 17,
+      "title": "Acil Diş Sağlığı",
+      "route": "/emergency"
+    },
+    {
+      "number": 18,
+      "title": "Klinik Bilgileri",
+      "route": "/clinic"
+    },
+    {
+      "number": 19,
+      "title": "Ödeme ve Onay",
+      "route": "/checkout"
+    },
+    {
+      "number": 20,
+      "title": "Bildirimler",
+      "route": "/notifications"
+    },
+    {
+      "number": 21,
+      "title": "Favoriler",
+      "route": "/saved"
+    },
+    {
+      "number": 22,
+      "title": "Tasarım Sistemi",
+      "route": "/design-system"
+    },
+    {
+      "number": 23,
+      "title": "Profil",
+      "route": "/(tabs)/profile"
+    }
+  ],
+  "language": "tr-TR",
+  "note": "Bu dosyadaki full-res görseller önceki İngilizce tasarım referanslarıdır; uygulamanın arayüzü Türkçedir."
+}

@@ -1,0 +1,6 @@
+import React from 'react';
+import {Tabs} from 'expo-router';
+import {View} from 'react-native';
+import {I,IconName} from '@/components/ui';
+import {C,shadow} from '@/theme';
+export default function TabsLayout(){const tabs:[string,IconName,IconName][]=[['home','home-outline','home'],['appointments','calendar-outline','calendar'],['records','folder-open-outline','folder-open'],['messages','chatbubble-ellipses-outline','chatbubble-ellipses'],['profile','person-outline','person']];return <Tabs screenOptions={{headerShown:false,tabBarActiveTintColor:C.teal,tabBarInactiveTintColor:'#8194A5',tabBarStyle:{backgroundColor:'rgba(255,255,255,.97)',borderTopColor:'#E6F4F9',borderTopWidth:1,height:70,paddingTop:9,paddingBottom:9,...shadow.card},tabBarLabelStyle:{fontSize:10,fontWeight:'700',marginTop:0}}}>{tabs.map(([name,off,on])=><Tabs.Screen key={name} name={name} options={{title:({home:'Ana Sayfa',appointments:'Randevular',records:'Kayıtlar',messages:'Mesajlar',profile:'Profil'} as Record<string,string>)[name],tabBarIcon:({focused,color})=><View style={{height:31,width:42,borderRadius:13,alignItems:'center',justifyContent:'center',backgroundColor:focused?'#DDF8FB':'transparent'}}><I name={focused?on:off} color={color} size={21}/></View>}}/>)}</Tabs>}

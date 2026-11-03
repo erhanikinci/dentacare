@@ -1,0 +1,8 @@
+import React,{useState} from 'react';
+import {Pressable,View} from 'react-native';
+import {useRouter} from 'expo-router';
+import {Screen,Card,Field,Header,I,Txt} from '@/components/ui';
+import {DoctorAvatar} from '@/components/illustrations';
+import {conversationSeeds,getDentist} from '@/data/demo';
+import {C} from '@/theme';
+export default function Mesajlar(){const r=useRouter();const [search,setSearch]=useState('');return <Screen><Header title="Mesajlar" back={false} right="create-outline" onRight={()=>r.push('/dentists')}/><Txt size="title" style={{marginBottom:14}}>Konuşmalar</Txt><Field icon="search-outline" placeholder="Konuşmalarda ara" value={search} onChangeText={setSearch}/><View style={{gap:12,marginTop:18}}>{conversationSeeds.filter(c=>c.name.toLowerCase().includes(search.toLowerCase())).map(c=><Card key={c.id} onPress={()=>r.push({pathname:'/messages/[id]',params:{id:c.id}})}><View style={{flexDirection:'row',alignItems:'center',gap:12}}>{c.id==='support'?<View style={{height:56,width:56,borderRadius:17,backgroundColor:C.powder,alignItems:'center',justifyContent:'center'}}><I name="chatbubbles-outline" color={C.teal} size={25}/></View>:<DoctorAvatar initials={getDentist(c.id).initials} color={getDentist(c.id).color} size={56}/>}<View style={{flex:1,gap:6}}><View style={{flexDirection:'row',justifyContent:'space-between'}}><Txt weight="800">{c.name}</Txt><Txt size="mini" muted>{c.time}</Txt></View><Txt size="caption" muted>{c.message}</Txt></View>{c.unread?<View style={{width:8,height:8,borderRadius:5,backgroundColor:C.aqua}}/>:null}</View></Card>)}</View><Txt size="caption" muted style={{textAlign:'center',marginTop:24}}>Demo mesajları bu cihazda saklanır.</Txt></Screen>}
